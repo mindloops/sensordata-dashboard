@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 1,
+  "id": 2,
   "links": [],
   "panels": [
     {
@@ -141,13 +141,13 @@
     "list": []
   },
   "time": {
-    "from": "now-90d",
-    "to": "now"
+    "from": "2020-01-25T23:00:00.000Z",
+    "to": "2020-12-26T22:59:59.000Z"
   },
   "timepicker": {},
   "timezone": "browser",
-  "title": "SensorThings",
-  "uid": "deenjj99gslj4e",
-  "version": 5,
+  "title": "SensorThings RIVM",
+  "uid": "aeenmemrdy3nka",
+  "version": 1,
   "weekStart": ""
 }

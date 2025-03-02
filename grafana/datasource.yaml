@@ -4,5 +4,5 @@ datasources:
   - name: FROST SensorThings API data source
     type: iosb-sensorthings-datasource
     access: proxy
-    url: https://airquality-frost.k8s.ilt-dmz.iosb.fraunhofer.de/v1.1/
+    url: https://api-samenmeten.rivm.nl/v1.0
     uid: ceenjc7m8z11cd
