@@ -9,6 +9,9 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      - 'grafana_storage:/var/lib/grafana'
+      - grafana_storage:/var/lib/grafana
+      - ./provider.yaml:/etc/grafana/provisioning/dashboards/main.yaml
+      - ./datasource.yaml:/etc/grafana/provisioning/datasources/main.yaml
+      - ./dashboards:/var/lib/grafana/dashboards
 volumes:
   grafana_storage: {}
