@@ -18,9 +18,91 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 2,
+  "id": 1,
   "links": [],
   "panels": [
+    {
+      "datasource": {
+        "type": "iosb-sensorthings-datasource",
+        "uid": "ceenjc7m8z11cd"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "basemap": {
+          "config": {},
+          "type": "osm-standard"
+        },
+        "controls": {
+          "mouseWheelZoom": true,
+          "showAttribution": true,
+          "showDebug": false,
+          "showLayercontrol": true,
+          "showScale": true,
+          "showSpatialFilter": true,
+          "showZoom": true
+        },
+        "view": {
+          "id": "zero",
+          "lat": 0,
+          "lon": 0,
+          "zoom": 1
+        }
+      },
+      "pluginVersion": "2.0.1",
+      "targets": [
+        {
+          "cacheDurationSeconds": 300,
+          "fields": [
+            {
+              "jsonPath": "$.value[*].phenomenonTime",
+              "language": "jsonpath",
+              "name": "Time",
+              "type": "time"
+            },
+            {
+              "jsonPath": "$.value[*].result",
+              "language": "jsonpath",
+              "name": "Result",
+              "type": "number"
+            }
+          ],
+          "method": "GET",
+          "queryParams": "",
+          "refId": "A",
+          "urlPath": ""
+        }
+      ],
+      "title": "Sensor map",
+      "type": "felixrelleum-geomapwms-panel"
+    },
     {
       "datasource": {
         "type": "iosb-sensorthings-datasource",
@@ -85,7 +167,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 0
+        "y": 8
       },
       "id": 1,
       "options": {
@@ -138,7 +220,25 @@
   "schemaVersion": 40,
   "tags": [],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "current": {
+          "text": "POLYGON((4.26916400518985 52.921092404668855,10.801174142325788 51.961782660022095,4.527445673217472 50.132371632786544,4.26916400518985 52.921092404668855))",
+          "value": "POLYGON((4.26916400518985 52.921092404668855,10.801174142325788 51.961782660022095,4.527445673217472 50.132371632786544,4.26916400518985 52.921092404668855))"
+        },
+        "hide": 2,
+        "name": "geomap_wms_spatial_filter_geometry",
+        "options": [
+          {
+            "selected": true,
+            "text": "POLYGON((4.26916400518985 52.921092404668855,10.801174142325788 51.961782660022095,4.527445673217472 50.132371632786544,4.26916400518985 52.921092404668855))",
+            "value": "POLYGON((4.26916400518985 52.921092404668855,10.801174142325788 51.961782660022095,4.527445673217472 50.132371632786544,4.26916400518985 52.921092404668855))"
+          }
+        ],
+        "query": "POLYGON((4.26916400518985 52.921092404668855,10.801174142325788 51.961782660022095,4.527445673217472 50.132371632786544,4.26916400518985 52.921092404668855))",
+        "type": "textbox"
+      }
+    ]
   },
   "time": {
     "from": "2020-01-25T23:00:00.000Z",
