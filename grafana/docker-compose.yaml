@@ -7,7 +7,7 @@ services:
       #- GF_SERVER_ROOT_URL=http://my.grafana.server/
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_PATHS_CONFIG=/etc/grafana/security.ini
-      - GF_PLUGINS_PREINSTALL=iosb-sensorthings-datasource,felixrelleum-geomapwms-panel
+      - GF_PLUGINS_PREINSTALL=iosb-sensorthings-datasource,felixrelleum-geomapwms-panel,yesoreyeram-infinity-datasource
     ports:
       - '3000:3000'
     volumes:
