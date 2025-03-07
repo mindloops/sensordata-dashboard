@@ -139,7 +139,7 @@
           "pagination_mode": "offset",
           "pagination_param_offset_field_name": "$skip",
           "pagination_param_size_field_name": "$top",
-          "pagination_param_size_value": 200,
+          "pagination_param_size_value": 2000,
           "parser": "backend",
           "refId": "A",
           "root_selector": "value",
@@ -206,7 +206,7 @@
         "layers": [
           {
             "config": {
-              "cluster": false,
+              "cluster": true,
               "clusterDistance": 20,
               "clusterMinDistance": 0,
               "clusterValue": "size",
@@ -287,7 +287,7 @@
           "pagination_mode": "offset",
           "pagination_param_offset_field_name": "$skip",
           "pagination_param_size_field_name": "$top",
-          "pagination_param_size_value": 200,
+          "pagination_param_size_value": 2000,
           "parser": "backend",
           "refId": "A",
           "root_selector": "value",
@@ -320,6 +320,6 @@
   "timezone": "browser",
   "title": "Landingpage sensordata",
   "uid": "cef49dvpwsc1sd",
-  "version": 2,
+  "version": 1,
   "weekStart": ""
 }
