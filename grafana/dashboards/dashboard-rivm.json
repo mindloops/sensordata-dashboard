@@ -29,88 +29,6 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 0
-      },
-      "id": 2,
-      "options": {
-        "basemap": {
-          "config": {},
-          "type": "osm-standard"
-        },
-        "controls": {
-          "mouseWheelZoom": true,
-          "showAttribution": true,
-          "showDebug": false,
-          "showLayercontrol": true,
-          "showScale": true,
-          "showSpatialFilter": true,
-          "showZoom": true
-        },
-        "view": {
-          "id": "zero",
-          "lat": 0,
-          "lon": 0,
-          "zoom": 1
-        }
-      },
-      "pluginVersion": "2.0.1",
-      "targets": [
-        {
-          "cacheDurationSeconds": 300,
-          "fields": [
-            {
-              "jsonPath": "$.value[*].phenomenonTime",
-              "language": "jsonpath",
-              "name": "Time",
-              "type": "time"
-            },
-            {
-              "jsonPath": "$.value[*].result",
-              "language": "jsonpath",
-              "name": "Result",
-              "type": "number"
-            }
-          ],
-          "method": "GET",
-          "queryParams": "",
-          "refId": "A",
-          "urlPath": ""
-        }
-      ],
-      "title": "Sensor map",
-      "type": "felixrelleum-geomapwms-panel"
-    },
-    {
-      "datasource": {
-        "type": "iosb-sensorthings-datasource",
-        "uid": "ceenjc7m8z11cd"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
             "mode": "palette-classic"
           },
           "custom": {
@@ -167,7 +85,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 8
+        "y": 0
       },
       "id": 1,
       "options": {

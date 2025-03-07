@@ -152,7 +152,7 @@
           }
         }
       ],
-      "title": "Panel Title",
+      "title": "Sensors",
       "type": "table"
     },
     {
@@ -251,10 +251,10 @@
           }
         ],
         "view": {
-          "id": "zero",
-          "lat": 0,
-          "lon": 0,
-          "zoom": 1
+          "id": "coords",
+          "lat": 52.286756,
+          "lon": 6.095451,
+          "zoom": 7.2
         }
       },
       "pluginVersion": "2.0.1",
