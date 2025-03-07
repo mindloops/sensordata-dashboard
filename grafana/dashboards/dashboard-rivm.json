@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 1,
+  "id": 2,
   "links": [],
   "panels": [
     {
@@ -184,6 +184,8 @@
         }
       },
       "pluginVersion": "11.5.1",
+      "repeat": "datastreams",
+      "repeatDirection": "v",
       "targets": [
         {
           "cacheDurationSeconds": 5,
@@ -208,7 +210,7 @@
           "method": "GET",
           "queryParams": "",
           "refId": "A",
-          "urlPath": "/Datastreams(1)/Observations?$orderby=phenomenonTime desc"
+          "urlPath": "/Datastreams(${datastreams})/Observations?$orderby=phenomenonTime desc"
         }
       ],
       "title": "Sensor #1",
@@ -235,8 +237,63 @@
             "value": "POLYGON((4.26916400518985 52.921092404668855,10.801174142325788 51.961782660022095,4.527445673217472 50.132371632786544,4.26916400518985 52.921092404668855))"
           }
         ],
-        "query": "POLYGON((4.26916400518985 52.921092404668855,10.801174142325788 51.961782660022095,4.527445673217472 50.132371632786544,4.26916400518985 52.921092404668855))",
+        "query": "POLYGON((-180 -90,180 -90,180 90,-180 90,-180 -90))",
         "type": "textbox"
+      },
+      {
+        "current": {
+          "text": [],
+          "value": []
+        },
+        "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "def47q7hoyiv4c"
+        },
+        "definition": "",
+        "hide": 2,
+        "includeAll": true,
+        "multi": true,
+        "name": "datastreams",
+        "options": [],
+        "query": {
+          "infinityQuery": {
+            "columns": [
+              {
+                "selector": "@iot\\.id",
+                "text": "ID",
+                "type": "string"
+              }
+            ],
+            "filters": [],
+            "format": "table",
+            "parser": "backend",
+            "refId": "variable",
+            "root_selector": "value",
+            "source": "url",
+            "type": "json",
+            "url": "https://api-samenmeten.rivm.nl/v1.0/Things(${id})/Datastreams",
+            "url_options": {
+              "data": "",
+              "method": "GET"
+            }
+          },
+          "query": "",
+          "queryType": "infinity"
+        },
+        "refresh": 1,
+        "regex": "",
+        "type": "query"
+      },
+      {
+        "current": {
+          "text": "",
+          "value": ""
+        },
+        "hide": 2,
+        "name": "id",
+        "options": [],
+        "query": "",
+        "type": "custom"
       }
     ]
   },
