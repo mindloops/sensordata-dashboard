@@ -316,7 +316,9 @@
     "from": "now-6h",
     "to": "now"
   },
-  "timepicker": {},
+  "timepicker": {
+    "hidden": true
+  },
   "timezone": "browser",
   "title": "Landingpage sensordata",
   "uid": "cef49dvpwsc1sd",
