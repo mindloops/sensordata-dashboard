@@ -11,3 +11,5 @@ datasources:
     access: proxy
     url: https://api-samenmeten.rivm.nl/v1.0
     uid: def47q7hoyiv4c
+    jsonData:
+      pathEncodedUrlsEnabled: true
