@@ -19,7 +19,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 1,
+  "id": 3,
   "links": [],
   "panels": [
     {
@@ -113,7 +113,7 @@
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "columns": [
@@ -148,7 +148,13 @@
           "url": "https://api-samenmeten.rivm.nl/v1.0/Things",
           "url_options": {
             "data": "",
-            "method": "GET"
+            "method": "GET",
+            "params": [
+              {
+                "key": "$filter",
+                "value": "st_intersects(Locations/location, geography'SRID=4326;POLYGON((5.188986188118007 52.271173934973916,5.3120607439787895 52.275251663619656,5.261061482851441 52.22631452565159,5.168740887633712 52.214607058723715,5.188986188118007 52.271173934973916))')"
+              }
+            ]
           }
         }
       ],
@@ -310,7 +316,19 @@
   "schemaVersion": 40,
   "tags": [],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "allowCustomValue": false,
+        "current": {
+          "text": "POLYGON((-180 -90,180 -90,180 90,-180 90,-180 -90))",
+          "value": "POLYGON((-180 -90,180 -90,180 90,-180 90,-180 -90))"
+        },
+        "name": "geomap_wms_spatial_filter_geometry",
+        "options": [],
+        "query": "",
+        "type": "custom"
+      }
+    ]
   },
   "time": {
     "from": "now-6h",
