@@ -136,7 +136,7 @@
           "format": "table",
           "global_query_id": "",
           "pagination_max_pages": 5,
-          "pagination_mode": "offset",
+          "pagination_mode": "none",
           "pagination_param_offset_field_name": "$skip",
           "pagination_param_size_field_name": "$top",
           "pagination_param_size_value": 2000,
@@ -152,7 +152,7 @@
             "params": [
               {
                 "key": "$filter",
-                "value": "st_intersects(Locations/location, geography'SRID=4326;POLYGON((5.188986188118007 52.271173934973916,5.3120607439787895 52.275251663619656,5.261061482851441 52.22631452565159,5.168740887633712 52.214607058723715,5.188986188118007 52.271173934973916))')"
+                "value": "st_intersects(Locations/location, geography'SRID=4326;${geomap_wms_spatial_filter_geometry}')"
               }
             ]
           }
