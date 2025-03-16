@@ -19,7 +19,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 3,
+  "id": 1,
   "links": [],
   "panels": [
     {
@@ -145,7 +145,7 @@
           "root_selector": "value",
           "source": "url",
           "type": "json",
-          "url": "https://api-samenmeten.rivm.nl/v1.0/Things",
+          "url": "/Things",
           "url_options": {
             "data": "",
             "method": "GET",
@@ -300,7 +300,7 @@
           "source": "url",
           "type": "json",
           "uql": "parse-json",
-          "url": "https://api-samenmeten.rivm.nl/v1.0/Things",
+          "url": "/Things",
           "url_options": {
             "data": "",
             "method": "GET",
@@ -347,6 +347,6 @@
   "timezone": "browser",
   "title": "Landingpage sensordata",
   "uid": "cef49dvpwsc1sd",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }

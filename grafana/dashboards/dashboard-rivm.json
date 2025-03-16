@@ -101,7 +101,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.5.2",
       "repeat": "datastreams",
       "repeatDirection": "v",
       "targets": [
@@ -143,23 +143,6 @@
     "list": [
       {
         "current": {
-          "text": "POLYGON((4.26916400518985 52.921092404668855,10.801174142325788 51.961782660022095,4.527445673217472 50.132371632786544,4.26916400518985 52.921092404668855))",
-          "value": "POLYGON((4.26916400518985 52.921092404668855,10.801174142325788 51.961782660022095,4.527445673217472 50.132371632786544,4.26916400518985 52.921092404668855))"
-        },
-        "hide": 2,
-        "name": "geomap_wms_spatial_filter_geometry",
-        "options": [
-          {
-            "selected": true,
-            "text": "POLYGON((4.26916400518985 52.921092404668855,10.801174142325788 51.961782660022095,4.527445673217472 50.132371632786544,4.26916400518985 52.921092404668855))",
-            "value": "POLYGON((4.26916400518985 52.921092404668855,10.801174142325788 51.961782660022095,4.527445673217472 50.132371632786544,4.26916400518985 52.921092404668855))"
-          }
-        ],
-        "query": "POLYGON((-180 -90,180 -90,180 90,-180 90,-180 -90))",
-        "type": "textbox"
-      },
-      {
-        "current": {
           "text": [],
           "value": []
         },
@@ -189,7 +172,7 @@
             "root_selector": "value",
             "source": "url",
             "type": "json",
-            "url": "https://api-samenmeten.rivm.nl/v1.0/Things(${id})/Datastreams",
+            "url": "/Things(${id})/Datastreams",
             "url_options": {
               "data": "",
               "method": "GET"
@@ -223,6 +206,6 @@
   "timezone": "browser",
   "title": "SensorThings RIVM",
   "uid": "aeenmemrdy3nka",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
