@@ -18,9 +18,23 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 2,
+  "id": 5,
   "links": [],
   "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "panels": [],
+      "repeat": "datastreams",
+      "title": "${datastreams:glob}",
+      "type": "row"
+    },
     {
       "datasource": {
         "type": "iosb-sensorthings-datasource",
@@ -82,10 +96,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
-        "w": 12,
+        "h": 13,
+        "w": 24,
         "x": 0,
-        "y": 0
+        "y": 1
       },
       "id": 1,
       "options": {
@@ -93,7 +107,7 @@
           "calcs": [],
           "displayMode": "list",
           "placement": "bottom",
-          "showLegend": true
+          "showLegend": false
         },
         "tooltip": {
           "hideZeros": false,
@@ -102,8 +116,6 @@
         }
       },
       "pluginVersion": "11.5.2",
-      "repeat": "datastreams",
-      "repeatDirection": "v",
       "targets": [
         {
           "cacheDurationSeconds": 5,
@@ -128,11 +140,106 @@
           "method": "GET",
           "queryParams": "",
           "refId": "A",
-          "urlPath": "/Datastreams(${datastreams})/Observations?$orderby=phenomenonTime desc"
+          "urlPath": "/Datastreams(${datastreams:text})/Observations?$orderby=phenomenonTime desc"
         }
       ],
-      "title": "Sensor #1",
+      "title": "",
       "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "def47q7hoyiv4c"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "left",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 24,
+        "x": 0,
+        "y": 14
+      },
+      "id": 3,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true
+      },
+      "pluginVersion": "11.5.2",
+      "targets": [
+        {
+          "columns": [
+            {
+              "selector": "description",
+              "text": "Description",
+              "type": "string"
+            },
+            {
+              "selector": "ObservedProperty.description",
+              "text": "Observed property",
+              "type": "string"
+            },
+            {
+              "selector": "unitOfMeasurement.symbol",
+              "text": "Unit",
+              "type": "string"
+            }
+          ],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "def47q7hoyiv4c"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "json",
+          "url": "/Datastreams(${datastreams:text})?$expand=ObservedProperty",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "",
+      "type": "table"
     }
   ],
   "preload": false,
@@ -162,6 +269,11 @@
               {
                 "selector": "@iot\\.id",
                 "text": "ID",
+                "type": "string"
+              },
+              {
+                "selector": "name",
+                "text": "SensorName",
                 "type": "string"
               }
             ],
@@ -199,13 +311,13 @@
     ]
   },
   "time": {
-    "from": "2020-01-25T23:00:00.000Z",
-    "to": "2020-12-26T22:59:59.000Z"
+    "from": "now-2d",
+    "to": "now"
   },
   "timepicker": {},
   "timezone": "browser",
   "title": "SensorThings RIVM",
   "uid": "aeenmemrdy3nka",
-  "version": 2,
+  "version": 1,
   "weekStart": ""
 }
