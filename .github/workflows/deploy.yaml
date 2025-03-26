@@ -19,6 +19,6 @@ jobs:
       run: |
         sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no -p "${{ secrets.SSH_PORT }}" "${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}" << EOF
           mkdir -p "dashboard" && cd "dashboard"
-          [ ! -d .git ] && git clone ${{ github.repositoryUrl }} . || git pull
+          [ ! -d .git ] && git clone https://github.com/mindloops/sensordata-dashboard . || git pull
           docker compose pull && docker compose up -d
         EOF
