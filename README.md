@@ -1,18 +1,13 @@
-# sensordata-visualization-analysis
+# Sensordata Dashboard
 
 ## Prerequisites
 
-- Docker installed
+- Docker installed (or similar e.g. Rancher, Colima, Podman)
 - Internet access
 
 ## Run
 
-Execute: 
-```
-cd grafana
-docker compose up
-```
-
+Execute: `docker compose up`
 Now open http://localhost:3000
 
 To terminate, execute: `docker compose down -v`
