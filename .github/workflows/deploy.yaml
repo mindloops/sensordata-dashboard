@@ -27,5 +27,5 @@ jobs:
           sed -i "s/^admin_password = .*/admin_password = ${{ secrets.GRAFANA_PASSWORD }}/" custom.ini
         
           # Start Grafana
-          docker compose pull && docker compose up -d --force-recreate
+          docker compose pull && docker compose down -v && docker compose up -d
         EOF
