@@ -6,6 +6,7 @@ datasources:
     access: proxy
     url: https://api-samenmeten.rivm.nl/v1.0
     uid: ceenjc7m8z11cd
+
   - name: Infinity SensorThings API data source
     type: yesoreyeram-infinity-datasource
     access: proxy
