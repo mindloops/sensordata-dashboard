@@ -7,7 +7,7 @@ services:
       # Environment variables with defaults/fallbacks
       - GF_SERVER_DOMAIN=${GRAFANA_DOMAIN:-}
       - GF_SERVER_ROOT_URL=${GRAFANA_URL:-}
-      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:-admin}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:-admin} # admin/admin is default Grafana login. Set $GRAFANA_PASSWORD in production!
       # Environment variables with fixed values
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_PATHS_CONFIG=/etc/grafana/custom.ini
@@ -22,7 +22,7 @@ services:
       - ./dashboards:/var/lib/grafana/dashboards
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.grafana.rule=Host(`${GRAFANA_DOMAIN}`)"
+      - "traefik.http.routers.grafana.rule=Host(`${GRAFANA_DOMAIN:-}`)"
       - "traefik.http.routers.grafana.entrypoints=websecure"
       - "traefik.http.routers.grafana.tls.certresolver=letsencrypt"
 
