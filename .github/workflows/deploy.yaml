@@ -1,7 +1,6 @@
 name: Deploy
 
 on:
-  # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
     branches: [ "master" ]
   # Allows you to run this workflow manually from the Actions tab
@@ -27,5 +26,5 @@ jobs:
           docker compose down -v
         
           # Start Grafana
-          GRAFANA_PASSWORD="${{ secrets.GRAFANA_PASSWORD }}" docker compose up -d
+          TLS_EMAIL="${{ secrets.TLS_EMAIL }}" GRAFANA_DOMAIN="${{ secrets.GRAFANA_DOMAIN }}" GRAFANA_PASSWORD="${{ secrets.GRAFANA_PASSWORD }}" docker compose -f docker-compose.yaml -f docker-compose.https.yaml up -d
         EOF

@@ -19,6 +19,11 @@ services:
       - ./provider.yaml:/etc/grafana/provisioning/dashboards/main.yaml
       - ./datasource.yaml:/etc/grafana/provisioning/datasources/main.yaml
       - ./dashboards:/var/lib/grafana/dashboards
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.grafana.rule=Host(`${GRAFANA_DOMAIN}`)"
+      - "traefik.http.routers.grafana.entrypoints=websecure"
+      - "traefik.http.routers.grafana.tls.certresolver=letsencrypt"
 
 volumes:
   grafana_storage: {}
