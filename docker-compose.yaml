@@ -5,7 +5,8 @@ services:
     restart: unless-stopped
     environment:
       # Environment variables with defaults/fallbacks
-      - GF_SERVER_ROOT_URL=${GRAFANA_DOMAIN:-}
+      - GF_SERVER_DOMAIN=${GRAFANA_DOMAIN:-}
+      - GF_SERVER_ROOT_URL=${GRAFANA_URL:-}
       - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:-admin}
       # Environment variables with fixed values
       - GF_AUTH_ANONYMOUS_ENABLED=true

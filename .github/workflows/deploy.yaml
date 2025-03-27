@@ -26,5 +26,5 @@ jobs:
           docker compose down -v
         
           # Start Grafana
-          TLS_EMAIL="${{ secrets.TLS_EMAIL }}" GRAFANA_DOMAIN="${{ secrets.GRAFANA_DOMAIN }}" GRAFANA_PASSWORD="${{ secrets.GRAFANA_PASSWORD }}" docker compose -f docker-compose.yaml -f docker-compose.https.yaml up -d
+          TLS_EMAIL="${{ secrets.TLS_EMAIL }}" GRAFANA_URL="https://${{ secrets.GRAFANA_DOMAIN }}" GRAFANA_DOMAIN="${{ secrets.GRAFANA_DOMAIN }}" GRAFANA_PASSWORD="${{ secrets.GRAFANA_PASSWORD }}" docker compose -f docker-compose.yaml -f docker-compose.https.yaml up -d
         EOF
