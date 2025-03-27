@@ -21,7 +21,7 @@ jobs:
           mkdir -p "dashboard" && cd "dashboard"
         
           # Clone or update
-          [ ! -d .git ] && git clone https://github.com/mindloops/sensordata-dashboard . || git pull
+          [ ! -d .git ] && git clone https://github.com/mindloops/sensordata-dashboard . || git fetch --all && git reset --hard origin/main
                   
           # Stop Grafana (clean sheet)
           docker compose down -v
