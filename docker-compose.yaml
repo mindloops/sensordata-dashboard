@@ -4,7 +4,10 @@ services:
     container_name: grafana
     restart: unless-stopped
     environment:
-      #- GF_SERVER_ROOT_URL=http://my.grafana.server/
+      # Environment variables with defaults/fallbacks
+      - GF_SERVER_ROOT_URL=${GRAFANA_DOMAIN:-}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:-admin}
+      # Environment variables with fixed values
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_PATHS_CONFIG=/etc/grafana/custom.ini
       - GF_PLUGINS_PREINSTALL=iosb-sensorthings-datasource,felixrelleum-geomapwms-panel,yesoreyeram-infinity-datasource
@@ -16,5 +19,6 @@ services:
       - ./provider.yaml:/etc/grafana/provisioning/dashboards/main.yaml
       - ./datasource.yaml:/etc/grafana/provisioning/datasources/main.yaml
       - ./dashboards:/var/lib/grafana/dashboards
+
 volumes:
   grafana_storage: {}
