@@ -20,7 +20,20 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": 1,
-  "links": [],
+  "links": [
+    {
+      "asDropdown": false,
+      "icon": "dashboard",
+      "includeVars": true,
+      "keepTime": false,
+      "tags": [],
+      "targetBlank": false,
+      "title": "Show all selected sensors",
+      "tooltip": "",
+      "type": "link",
+      "url": "/d/beenmemrdy4nka/details-sensordata-multiple"
+    }
+  ],
   "panels": [
     {
       "datasource": {
