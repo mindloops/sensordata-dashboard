@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 5,
+  "id": 1,
   "links": [],
   "panels": [
     {
@@ -284,10 +284,16 @@
             "root_selector": "value",
             "source": "url",
             "type": "json",
-            "url": "/Things(${id})/Datastreams",
+            "url": "/Datastreams",
             "url_options": {
               "data": "",
-              "method": "GET"
+              "method": "GET",
+              "params": [
+                {
+                  "key": "$filter",
+                  "value": "st_intersects(Thing/Locations/location, geography'SRID=4326;${geomap_wms_spatial_filter_geometry}')"
+                }
+              ]
             }
           },
           "query": "",
@@ -304,6 +310,18 @@
         },
         "hide": 2,
         "name": "id",
+        "options": [],
+        "query": "",
+        "type": "custom"
+      },
+      {
+        "allowCustomValue": false,
+        "current": {
+          "text": "",
+          "value": ""
+        },
+        "hide": 2,
+        "name": "geomap_wms_spatial_filter_geometry",
         "options": [],
         "query": "",
         "type": "custom"
