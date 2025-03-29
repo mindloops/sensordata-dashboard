@@ -80,7 +80,7 @@
                 "value": [
                   {
                     "title": "",
-                    "url": "/d/aeenmemrdy3nka/sensorthings-rivm?var-id=${__value.raw}"
+                    "url": "/d/aeenmemrdy3nka/sensorthings-rivm?var-id=${__value.raw}&${sensor_api:queryparam}"
                   }
                 ]
               }
@@ -97,7 +97,7 @@
                 "value": [
                   {
                     "title": "",
-                    "url": "/d/aeenmemrdy3nka/sensorthings-rivm?var-id=${__data.fields.ID}"
+                    "url": "/d/aeenmemrdy3nka/sensorthings-rivm?var-id=${__data.fields.ID}&${sensor_api:queryparam}"
                   }
                 ]
               }

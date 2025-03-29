@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 1,
+  "id": 2,
   "links": [],
   "panels": [
     {
@@ -38,7 +38,7 @@
     {
       "datasource": {
         "type": "yesoreyeram-infinity-datasource",
-        "uid": "def47q7hoyiv4c"
+        "uid": "${sensor_api}"
       },
       "fieldConfig": {
         "defaults": {
@@ -132,7 +132,7 @@
           ],
           "datasource": {
             "type": "yesoreyeram-infinity-datasource",
-            "uid": "def47q7hoyiv4c"
+            "uid": "${sensor_api}"
           },
           "filters": [],
           "format": "table",
@@ -161,7 +161,7 @@
     {
       "datasource": {
         "type": "yesoreyeram-infinity-datasource",
-        "uid": "def47q7hoyiv4c"
+        "uid": "${sensor_api}"
       },
       "fieldConfig": {
         "defaults": {
@@ -233,7 +233,7 @@
           ],
           "datasource": {
             "type": "yesoreyeram-infinity-datasource",
-            "uid": "def47q7hoyiv4c"
+            "uid": "${sensor_api}"
           },
           "filters": [],
           "format": "table",
@@ -267,7 +267,7 @@
         },
         "datasource": {
           "type": "yesoreyeram-infinity-datasource",
-          "uid": "def47q7hoyiv4c"
+          "uid": "${sensor_api}"
         },
         "definition": "",
         "hide": 2,
@@ -319,6 +319,20 @@
         "options": [],
         "query": "",
         "type": "custom"
+      },
+      {
+        "allowCustomValue": false,
+        "current": {
+          "text": "Fraunhofer Airquality API",
+          "value": "wef1337hoyiv4c"
+        },
+        "hide": 2,
+        "name": "sensor_api",
+        "options": [],
+        "query": "yesoreyeram-infinity-datasource",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
       }
     ]
   },
