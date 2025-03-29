@@ -38,7 +38,7 @@
     {
       "datasource": {
         "type": "yesoreyeram-infinity-datasource",
-        "uid": "def47q7hoyiv4c"
+        "uid": "${sensor_api}"
       },
       "fieldConfig": {
         "defaults": {
@@ -143,7 +143,7 @@
           ],
           "datasource": {
             "type": "yesoreyeram-infinity-datasource",
-            "uid": "def47q7hoyiv4c"
+            "uid": "${sensor_api}"
           },
           "filters": [],
           "format": "table",
@@ -165,7 +165,7 @@
             "params": [
               {
                 "key": "$filter",
-                "value": "st_intersects(Locations/location, geography'SRID=4326;${geomap_wms_spatial_filter_geometry}')"
+                "value": "st_intersects(Locations/location, geography${use_ewkt}${geomap_wms_spatial_filter_geometry}')"
               }
             ]
           }
@@ -361,6 +361,30 @@
         "refresh": 1,
         "regex": "",
         "type": "datasource"
+      },
+      {
+        "allowCustomValue": false,
+        "current": {
+          "text": "'SRID=4326;",
+          "value": "'SRID=4326;"
+        },
+        "description": "",
+        "label": "Use EWKT workaround",
+        "name": "use_ewkt",
+        "options": [
+          {
+            "selected": true,
+            "text": "'SRID=4326;",
+            "value": "'SRID=4326;"
+          },
+          {
+            "selected": false,
+            "text": "'",
+            "value": "'"
+          }
+        ],
+        "query": "'SRID=4326;,\n',",
+        "type": "custom"
       }
     ]
   },
