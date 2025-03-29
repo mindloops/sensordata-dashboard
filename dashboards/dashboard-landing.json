@@ -347,6 +347,20 @@
         "options": [],
         "query": "",
         "type": "custom"
+      },
+      {
+        "allowCustomValue": false,
+        "current": {
+          "text": "RIVM Samen Meten API",
+          "value": "def47q7hoyiv4c"
+        },
+        "label": "Sensor API",
+        "name": "sensor_api",
+        "options": [],
+        "query": "yesoreyeram-infinity-datasource",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
       }
     ]
   },

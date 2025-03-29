@@ -1,16 +1,18 @@
 apiVersion: 1
 
 datasources:
-  - name: FROST SensorThings API data source
-    type: iosb-sensorthings-datasource
-    access: proxy
-    url: https://api-samenmeten.rivm.nl/v1.0
-    uid: ceenjc7m8z11cd
-
-  - name: Infinity SensorThings API data source
+  - name: RIVM Samen Meten API
     type: yesoreyeram-infinity-datasource
     access: proxy
     url: https://api-samenmeten.rivm.nl/v1.0
     uid: def47q7hoyiv4c
+    jsonData:
+      pathEncodedUrlsEnabled: true
+
+  - name: Fraunhofer Airquality API
+    type: yesoreyeram-infinity-datasource
+    access: proxy
+    url: https://airquality-frost.k8s.ilt-dmz.iosb.fraunhofer.de/v1.1
+    uid: wef1337hoyiv4c
     jsonData:
       pathEncodedUrlsEnabled: true
