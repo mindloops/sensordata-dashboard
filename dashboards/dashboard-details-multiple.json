@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 1,
+  "id": 3,
   "links": [],
   "panels": [
     {
@@ -37,8 +37,8 @@
     },
     {
       "datasource": {
-        "type": "iosb-sensorthings-datasource",
-        "uid": "ceenjc7m8z11cd"
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "def47q7hoyiv4c"
       },
       "fieldConfig": {
         "defaults": {
@@ -118,29 +118,41 @@
       "pluginVersion": "11.5.2",
       "targets": [
         {
-          "cacheDurationSeconds": 5,
-          "datasource": {
-            "type": "iosb-sensorthings-datasource",
-            "uid": "ceenjc7m8z11cd"
-          },
-          "fields": [
+          "columns": [
             {
-              "jsonPath": "$.value[*].phenomenonTime",
-              "language": "jsonpath",
-              "name": "Time",
-              "type": "time"
+              "selector": "phenomenonTime",
+              "text": "",
+              "type": "timestamp"
             },
             {
-              "jsonPath": "$.value[*].result",
-              "language": "jsonpath",
-              "name": "Result",
+              "selector": "result",
+              "text": "",
               "type": "number"
             }
           ],
-          "method": "GET",
-          "queryParams": "",
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "def47q7hoyiv4c"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
           "refId": "A",
-          "urlPath": "/Datastreams(${datastreams:text})/Observations?$orderby=phenomenonTime desc"
+          "root_selector": "value",
+          "source": "url",
+          "type": "json",
+          "url": "/Datastreams(${datastreams:text})/Observations",
+          "url_options": {
+            "data": "",
+            "method": "GET",
+            "params": [
+              {
+                "key": "$orderby",
+                "value": "phenomenonTime desc"
+              }
+            ]
+          }
         }
       ],
       "title": "",
