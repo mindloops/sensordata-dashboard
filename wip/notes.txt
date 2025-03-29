@@ -1,7 +1,0 @@
-/Datastreams(${datastreams})/Observations?$expand=Datastream&$orderby=phenomenonTime desc
-
-$.value[*].Datastream.unitOfMeasurement.symbol
-
-----------------
-
-https://api-samenmeten.rivm.nl/v1.0/Things(${id})/Datastreams?$expand=ObservedProperty&$filter=ObservedProperty/name%20eq%20%27rh%27
