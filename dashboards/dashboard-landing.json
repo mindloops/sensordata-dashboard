@@ -351,8 +351,8 @@
       {
         "allowCustomValue": false,
         "current": {
-          "text": "Fraunhofer Airquality API",
-          "value": "wef1337hoyiv4c"
+          "text": "RIVM Samen Meten API",
+          "value": "def47q7hoyiv4c"
         },
         "label": "Sensor API",
         "name": "sensor_api",
@@ -373,12 +373,12 @@
         "name": "use_ewkt",
         "options": [
           {
-            "selected": false,
+            "selected": true,
             "text": "'SRID=4326;",
             "value": "'SRID=4326;"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "'",
             "value": "'"
           }
