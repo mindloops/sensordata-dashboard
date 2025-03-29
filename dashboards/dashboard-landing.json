@@ -177,7 +177,7 @@
     {
       "datasource": {
         "type": "yesoreyeram-infinity-datasource",
-        "uid": "def47q7hoyiv4c"
+        "uid": "${sensor_api}"
       },
       "fieldConfig": {
         "defaults": {
@@ -294,7 +294,7 @@
           "data": "",
           "datasource": {
             "type": "yesoreyeram-infinity-datasource",
-            "uid": "def47q7hoyiv4c"
+            "uid": "${sensor_api}"
           },
           "filters": [],
           "format": "table",
@@ -351,8 +351,8 @@
       {
         "allowCustomValue": false,
         "current": {
-          "text": "RIVM Samen Meten API",
-          "value": "def47q7hoyiv4c"
+          "text": "Fraunhofer Airquality API",
+          "value": "wef1337hoyiv4c"
         },
         "label": "Sensor API",
         "name": "sensor_api",
@@ -365,20 +365,20 @@
       {
         "allowCustomValue": false,
         "current": {
-          "text": "'SRID=4326;",
-          "value": "'SRID=4326;"
+          "text": "'",
+          "value": "'"
         },
         "description": "",
         "label": "Use EWKT workaround",
         "name": "use_ewkt",
         "options": [
           {
-            "selected": true,
+            "selected": false,
             "text": "'SRID=4326;",
             "value": "'SRID=4326;"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "'",
             "value": "'"
           }
