@@ -365,8 +365,8 @@
       {
         "allowCustomValue": false,
         "current": {
-          "text": "'",
-          "value": "'"
+          "text": "'SRID=4326;",
+          "value": "'SRID=4326;"
         },
         "description": "",
         "label": "Use EWKT workaround",
