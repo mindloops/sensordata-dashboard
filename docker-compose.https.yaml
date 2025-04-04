@@ -19,7 +19,7 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
     labels:
       # Proxy to RIVM samen meten API. Not used by Grafana but used for the sensordata-web-ui.
-      - "traefik.http.routers.external-proxy.rule=Host(`sensordata-rivm-proxy.mindloops.io`)"
+      - "traefik.http.routers.external-proxy.rule=Host(`sensordata-dashboard.mindloops.io`) && PathPrefix(`/rivm-proxy`)"
       - "traefik.http.routers.external-proxy.entrypoints=websecure"
       - "traefik.http.routers.external-proxy.tls.certresolver=letsencrypt"
       - "traefik.http.routers.external-proxy.service=external-service"
