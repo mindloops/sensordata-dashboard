@@ -17,3 +17,20 @@ services:
     volumes:
       - "./letsencrypt:/letsencrypt"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    labels:
+      # Proxy to RIVM samen meten API. Not used by Grafana but used for the sensordata-web-ui.
+      - "traefik.http.routers.external-proxy.rule=Host(`sensordata-rivm-proxy.mindloops.io`)"
+      - "traefik.http.routers.external-proxy.entrypoints=websecure"
+      - "traefik.http.routers.external-proxy.service=external-service"
+      - "traefik.http.routers.external-proxy.middlewares=cors-headers"
+
+      # Service to external URL
+      - "traefik.http.services.external-service.loadbalancer.server.url=https://api-samenmeten.rivm.nl"
+      - "traefik.http.services.external-service.loadbalancer.serverstransport=external-transport"
+
+      # CORS Middleware
+      - "traefik.http.middlewares.cors-headers.headers.accesscontrolallowmethods=GET,HEAD,OPTIONS"
+      - "traefik.http.middlewares.cors-headers.headers.accesscontrolallowheaders=*"
+      - "traefik.http.middlewares.cors-headers.headers.accesscontrolalloworiginlist=*"
+      - "traefik.http.middlewares.cors-headers.headers.accesscontrolallowcredentials=true"
+      - "traefik.http.middlewares.cors-headers.headers.addvaryheader=true"
