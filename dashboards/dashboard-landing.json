@@ -19,7 +19,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 1,
+  "id": 3,
   "links": [
     {
       "asDropdown": false,
@@ -76,13 +76,8 @@
             },
             "properties": [
               {
-                "id": "links",
-                "value": [
-                  {
-                    "title": "",
-                    "url": "/d/aeenmemrdy3nka/sensorthings-rivm?var-id=${__value.raw}&${sensor_api:queryparam}"
-                  }
-                ]
+                "id": "custom.hidden",
+                "value": true
               }
             ]
           },
@@ -100,6 +95,28 @@
                     "url": "/d/aeenmemrdy3nka/sensorthings-rivm?var-id=${__data.fields.ID}&${sensor_api:queryparam}"
                   }
                 ]
+              },
+              {
+                "id": "custom.minWidth",
+                "value": 50
+              },
+              {
+                "id": "custom.width",
+                "value": 183
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Observed properties"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "auto"
+                }
               }
             ]
           }
@@ -139,6 +156,11 @@
               "selector": "@iot\\.id",
               "text": "ID",
               "type": "string"
+            },
+            {
+              "selector": "Datastreams.#.ObservedProperty.description",
+              "text": "Observed properties",
+              "type": "string"
             }
           ],
           "datasource": {
@@ -166,6 +188,10 @@
               {
                 "key": "$filter",
                 "value": "st_intersects(Locations/location, geography${use_ewkt}${geomap_wms_spatial_filter_geometry}')"
+              },
+              {
+                "key": "$expand",
+                "value": "Datastreams/ObservedProperty"
               }
             ]
           }
